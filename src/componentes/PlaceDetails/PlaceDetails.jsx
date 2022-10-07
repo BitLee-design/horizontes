@@ -1,11 +1,11 @@
-import { Place } from "@material-ui/icons";
+import { Image, Place } from "@material-ui/icons";
 import React from "react";
 import { Box, Typography, Button, Card, CardMedia, CardContent, CardActions, Chip } from '@material-ui/core';
-import LocationOnItem from '@material-ui/icons/LocationOn';
+import LocationOnIcon from '@material-ui/icons/LocationOnIcon';
 import PhoneIcon from '@material-ui/icon/Phone';
 import Rating from '@material-ui/lab/Rating;'
 
-import useStykes from './styles';
+import useStyles from './styles';
 
 const PlaceDetails = ({ place }) => {
     const classes = useStyles();
@@ -19,17 +19,18 @@ const PlaceDetails = ({ place }) => {
             />
             <CardContent>
                 <Typography gutterBottom varient="h5">{place.name}</Typography>
-                <Box display={flex} justifyContent="space-between">
+                <Box display="flex" justifyContent="space-between">
                     <Typography variant="subtitle">Price</Typography>
                     <Typography gutterButton variant="subtitle">{Place.price.level}</Typography>
                 </Box>
-                <Box display={flex} justifyContent="space-between">
+                <Box display="flex" justifyContent="space-between">
                     <Typography variant="subtitle1">Ranking</Typography>
                     <Typography gutterButton variant="subtitle">{Place.ranking}</Typography>
                 </Box>
+                <Rating size="small" value={Number(place.rating)} readOnly />
                 {place?.awards?.map((award) => (
-                    <Box my={1}display={flex} justifyContent="space-between" alignItems="center">
-                        <Img src={award.images.small} alt={award.display_name} />
+                    <Box my={1}display="flex" justifyContent="space-between" alignItems="center">
+                        <Image src={award.images.small} alt={award.display_name} />
                         <Typography variant="subtitle2" color="textSecondary">{award.display_name}</Typography>
                     </Box>
                 ))}
