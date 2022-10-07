@@ -2,10 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { CssBaseline, Grid } from '@material-ui/core';
 
 import { getPlacesData } from './api';
-import Header from './componentes/Header/Header';
-import List from './componentes/List/List';
-import Map from './componentes/Map/Map';
-import Places from './componentes/Places/Places';
+import Header from './components/Header/Header';
+import List from './components/List/List';
+import Map from './components/Map/Map';
+import Places from './components/Places/Places';
 
 const App = () => {
     const {places, setPlaces} = useState([]);
