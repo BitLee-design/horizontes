@@ -6,10 +6,12 @@ import { PlaceDetails } from '../PlaceDetails/PlaceDetails';
 import useStyles from './styles';
 import { type } from "@testing-library/user-event/dist/type";
 
-const List = ({ places }) => {
+const List = ({ places, childClicked }) => {
     const classes = useStyles();
     const [type, setType] = useState('restaurants');
     const [rating, setRating] = useState('');
+
+    console.log({ childClicked });
     
     return (
         <div className="classes.container">
